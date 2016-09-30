@@ -54,6 +54,21 @@ int BinarySearch2(const char *arr, int key)
 	return -1;
 
 	}
+	int BinarySearch3(char *arr,size_t left,size_t right, int key)
+{
+	if (left > right)
+		return -1;
+	size_t mid = left + right / 2;
+	if (arr[mid > key])
+	{
+		return BinarySearch3(arr, mid + 1, right, key);
+	}
+	else
+	{
+		return BinarySearch3(arr, left, mid - 1, key);
+	}
+	return mid;
+}
 int main()
 {
 

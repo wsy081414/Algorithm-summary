@@ -30,7 +30,8 @@ void InsertionSort(char *p)
 	
 }
 
-
+ 
+ 
 int main()
 {
 	char str[] = "17452198";
