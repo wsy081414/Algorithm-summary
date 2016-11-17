@@ -30,6 +30,24 @@ void InsertionSort(char *p)
 	
 }
 
+//CPP°æ±¾£¬
+template<typename T>
+void InsertSort(T* arr, int size)
+{
+	int pos = 0;
+	for (int index = pos + 1; index < size; index++)
+	{
+		pos = index - 1;
+		T tmp = arr[index];
+		while (pos >= 0 && arr[pos] < tmp)
+		{
+			arr[pos + 1] = arr[pos];
+			pos -= 1;
+		}
+		arr[pos + 1] = tmp;
+	}
+
+}
  
  
 int main()

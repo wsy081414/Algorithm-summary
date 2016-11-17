@@ -34,6 +34,30 @@ void SelectSort(char *str)
 	}
 }
 
+//Cpp版本
+template<typename T>
+void SelectSort(T* arr,int n)
+{
+	int max = 0;
+	for (int index = 0; index < n-1; index++)
+	{
+		max = index ;
+		int pos = index + 1;
+		//找出最值
+		while (pos<n)
+		{
+			if (arr[pos]>arr[max])
+			{
+				max = pos;				
+			}
+			pos++;
+		}
+		//交换
+		std::swap(arr[index], arr[max]);
+	}
+}
+
+
 int main()
 {
 	char str[] = "17452198";

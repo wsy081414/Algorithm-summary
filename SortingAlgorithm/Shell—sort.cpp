@@ -24,6 +24,7 @@ void ShellSort(T *arr, int size)
 			T tmp = arr[index];
 			while (pos >= 0&&arr[pos] < tmp)
 			{
+				//注意每一次向有序区的前一个，那么在带增量中，就是前gap位置的，直接插入就是前1个。
 				arr[pos+gap] = arr[pos];
 				pos -= gap;
 			}
