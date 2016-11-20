@@ -58,6 +58,39 @@ void SelectSort(T* arr,int n)
 }
 
 
+//选择排序
+//一次就选择出最小的和最大的
+template<typename T>
+void SelectSort2(T*arr,int n)
+{
+	assert(arr);
+	int left = 0;
+	int right = n-1;
+	while (left < right)
+	{
+		int min = left;
+		int max = right;
+		for (int i = left; i <= right ; i++)
+		{
+			if (arr[i] < arr[min])
+				min = i;
+			if(arr[i] > arr[max])
+				max = i;
+		}
+		//考虑修正的情况，最大值在最小位置，最小值在最大位置。
+		swap(arr[max], arr[right]);
+
+		if (min == right)
+		{
+			min = max;
+		}
+		swap(arr[min], arr[left]);
+		left++;
+		right--;
+	}
+}
+
+
 int main()
 {
 	char str[] = "17452198";
