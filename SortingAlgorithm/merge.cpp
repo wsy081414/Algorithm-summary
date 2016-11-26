@@ -13,21 +13,6 @@ void MergeSort1(T* arr, int n)
 	merge_sort1(arr,tmp, 0, n - 1);
 
 }
-//≤Â»Î≈≈–Ú”≈ªØ
-template<typename T>
-void MergeSort1(T* arr, int n)
-{
-	T* tmp = new T[n];
-	assert(tmp);
-	for (int i = 0; i < n; i++)
-	{
-		tmp[i] = arr[i];
-	}
-	if (n>5)
-		merge_sort1(arr, tmp, 0, n - 1);
-	else
-		InsertSort(arr, n);
-}
 
 template<typename T>
 void merge_sort1(T* arr, T* tmp, int begin, int end)

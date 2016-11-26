@@ -156,8 +156,8 @@ template<typename T>
 int PortSort3(T* arr, int begin, int end)
 {
 	assert(arr);
-	int prev = -1;
-	int cur = 0;
+	int prev = begin-1;
+	int cur = begin;
 	int pos = SelectMid(arr, begin, end);
 	std::swap(arr[pos], arr[end]);
 	T key = arr[end];
