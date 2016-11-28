@@ -31,17 +31,17 @@ void CountSort(T* arr, int n)
 	//范围要+1	
 	int range = max - min + 1;
 
-	//创建一个零时空间
+	//创建一个哈希表
 	T *tmp = new T[range];
 
 	memset(tmp, 0, sizeof(T)*range);
 
+	//2）把数对应哈希表的下标，统计次数。
 	for (int i = 0; i < n; i++)
-	{
 		tmp[arr[i] - min]++;
-	}
 
-
+	//通过哈希表，从小到大进行遍历，然后按哈希表顺序写入arr当中。
+	
 	int index = 0;
 	for (int i = 0; i < range; i++)
 	{
@@ -52,6 +52,7 @@ void CountSort(T* arr, int n)
 		}
 	}
 
+	delete[] tmp;
 
 }
 

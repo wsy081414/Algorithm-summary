@@ -29,6 +29,7 @@ template<typename T>
 void RadixSort(T* arr, int n)
 {
 	assert(arr);
+	
 	//得到最大位数
 	int base = 1;
 	int digit = GetMaxDigit(arr, n);
@@ -53,7 +54,6 @@ void RadixSort(T* arr, int n)
 			position[i] = position[i - 1] + count[i - 1];
 		}
 		//进行设置tmp中的数。
-
 		for (int i = 0; i < n; i++)
 		{
 			int num = (arr[i] / base) % 10;
@@ -67,6 +67,6 @@ void RadixSort(T* arr, int n)
 		base *= 10;
 	}
 
-
+	delete[] tmp;
 
 }
